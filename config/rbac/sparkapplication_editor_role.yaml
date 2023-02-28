@@ -1,0 +1,31 @@
+# permissions for end users to edit sparkapplications.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/name: clusterrole
+    app.kubernetes.io/instance: sparkapplication-editor-role
+    app.kubernetes.io/component: rbac
+    app.kubernetes.io/created-by: spark-operator
+    app.kubernetes.io/part-of: spark-operator
+    app.kubernetes.io/managed-by: kustomize
+  name: sparkapplication-editor-role
+rules:
+- apiGroups:
+  - spark.devopsculture.io
+  resources:
+  - sparkapplications
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - spark.devopsculture.io
+  resources:
+  - sparkapplications/status
+  verbs:
+  - get
