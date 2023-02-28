@@ -1,0 +1,12 @@
+apiVersion: spark.devopsculture.io/v1alpha1
+kind: SparkApplication
+metadata:
+  labels:
+    app.kubernetes.io/name: sparkapplication
+    app.kubernetes.io/instance: sparkapplication-sample
+    app.kubernetes.io/part-of: spark-operator
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/created-by: spark-operator
+  name: sparkapplication-sample
+spec:
+  # TODO(user): Add fields here
